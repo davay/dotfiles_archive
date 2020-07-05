@@ -2,9 +2,13 @@
 
 A collection of dotfiles from my i3 setup
 
+## Workflow
+
 ![Busy](screenshots/combined.png)
 
-![Login](screenshots/login.jpg)
+## Login Manager
+
+![Login](screenshots/4.jpg)
 
 ---
 
