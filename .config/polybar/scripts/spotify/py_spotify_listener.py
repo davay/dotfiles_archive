@@ -3,9 +3,10 @@
 # License: GPL3+
 """Receiver related functionality."""
 import dbus.service
-import dbus.glib
+from dbus.mainloop.glib import DBusGMainLoop
+DBusGMainLoop(set_as_default=True)
 from os import system
-from gi.repository import GObject
+from gi.repository import GObject, GLib
 import dbus
 
 
@@ -86,7 +87,7 @@ def unwrap(val):
         return bytes([int(val)])
     return val
 
-loop = GObject.MainLoop()
+loop = GLib.MainLoop()
 
 """
 First we get the bus to attach to. This may be either the session bus, of the
