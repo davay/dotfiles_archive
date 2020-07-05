@@ -1,0 +1,3 @@
+[submodule ".config/polybar/polybar-themes"]
+	path = .config/polybar/polybar-themes
+	url = https://github.com/ngynLk/polybar-themes.git
