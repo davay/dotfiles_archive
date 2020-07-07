@@ -4,7 +4,11 @@ A collection of dotfiles from my i3 setup
 
 ## Workflow
 
-![Busy](screenshots/combined.png)
+![1](screenshots/1.png)
+
+![1](screenshots/2.png)
+
+![1](screenshots/3.png)
 
 ## Login Manager
 
