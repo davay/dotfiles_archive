@@ -105,7 +105,14 @@ export PROMPT_EOL_MARK=""
 (cat ~/.cache/wal/sequences &)
 source ~/.cache/wal/colors-tty.sh
 
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 alias cdpolybar='cd ~/.config/polybar'
 alias i3config='vim ~/.i3/config'
 alias polybarconfig='vim ~/.config/polybar/config'
 alias cdgithub='cd ~/Documents/github'
+alias vim='nvim'
+alias cdwebsite='cd ~/Documents/github/devinl.im'
+alias cdsu='cd ~/Drive/USA/SU'

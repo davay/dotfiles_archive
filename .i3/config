@@ -111,7 +111,6 @@ set $ws7 E
 set $ws8 R
 
 # Assign workspace to monitors
-exec --no-startup-id xrandr --output DP-5 --rotate left --output HDMI-0 --primary --mode 2560x1080 --pos 0x275 --rate 74.99
 workspace 1 output primary
 workspace 2 output primary
 workspace 3 output primary
@@ -154,16 +153,18 @@ bindsym $mod+Shift+r move container to workspace $ws8; workspace $ws8
 # Open applications on specific workspaces
 assign [class="(?i)google-chrome"] $ws1
 assign [class="(?i)steam"] $ws3
-assign [class="(?i)discord"] $ws4
 assign [class="(?i)franz"] $ws4
 assign [class="(?i)spotify"] $ws5
 assign [class="(?i)musixmatch"] $ws5
 assign [class="(?i)pavucontrol"] $ws6
+assign [class="(?i)discord"] $ws6
 
 assign [class="(?i)dota2"] $ws2
+assign [class="(?i)fsd-win64-shipping.exe"] $ws2
+assign [class="(?i)7daystodie.exe"] $ws2 
+assign [class="(?i)tekkengame-win64-shipping.exe"] $ws2
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
@@ -233,21 +234,26 @@ mode "resize" {
 # Lock screen
 bindsym $mod+period exec --no-startup-id blurlock
 
-# Autostart applications
+# Monitor hotkeys
+bindsym $mod+bracketright exec --no-startup-id "xrandr --output DP-5 --auto --right-of HDMI-0 --rotate left --output HDMI-0 --primary --mode 2560x1080 --rate 74.99; xrandr --output HDMI-0 --pos 0x275; sleep 1; wal -R; sleep 1; nitrogen --restore"
+
+bindsym $mod+bracketleft exec --no-startup-id "xrandr --output DP-5 --off; sleep 1; wal -R; sleep 1; nitrogen --restore"
+
+# autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nitrogen --restore; sleep 1; picom -bc
+exec --no-startup-id picom -bc
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/.config/polybar/scripts/spotify/launchlistener.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id fix_xcursor
 
-exec --no-startup-id insync
-exec --no-startup-id "sleep 2; wal -R; sleep 2; xrdb ~/.Xresources" # get the color coding back in terms
+exec --no-startup-id nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
+#exec --no-startup-id insync start
+exec --no-startup-id "sleep 2; wal -R; sleep 2; xrdb ~/.Xresources; sleep 2; nitrogen --restore" # get the color coding back in terms
+#exec --no-startup-id "sleep 5; nitrogen --restore" # for the blur background on 2nd monitor since wal overrides
 exec --no-startup-id google-chrome-stable 
 exec --no-startup-id steam
 exec --no-startup-id discord
@@ -255,6 +261,7 @@ exec --no-startup-id franz
 exec --no-startup-id musixmatch
 exec --no-startup-id spotify
 exec --no-startup-id pavucontrol
+exec --no-startup-id guake
 
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
