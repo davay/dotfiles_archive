@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/davay/.oh-my-zsh"
+export ZSH="/Users/davay/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -33,7 +33,7 @@ ZSH_THEME="robbyrussell"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -98,21 +98,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-setopt PROMPT_CR
-setopt PROMPT_SP
-export PROMPT_EOL_MARK=""
-
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
-
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-
-alias cdpolybar='cd ~/.config/polybar'
-alias i3config='vim ~/.i3/config'
-alias polybarconfig='vim ~/.config/polybar/config'
-alias cdgithub='cd ~/Documents/github'
-alias vim='nvim'
-alias cdwebsite='cd ~/Documents/github/devinl.im'
-alias cdsu='cd ~/Drive/USA/SU'
+# CUSTOM
+unsetopt PROMPT_SP
+alias ls="gls --color"
+alias vim="nvim"
+alias sudo="sudo " # enable aliases for sudo
+alias serve="browser-sync start --server --files ."
+alias vimconfig="nvim ~/.config/nvim/init.vim"
