@@ -7,7 +7,7 @@
 # remove everything from dock
 # caps lock to escape (keyboard -> modifier keys
 # finder -> cmd+shift+h drag ~ into favorite
-# download insync 
+# download google drive
 # keyboard -> uncheck all shortcuts
 # keyboard -> screenshot to clipboard == cmd+shift+s
 # keyboard -> screenshot/recording options == cmd+shift+r

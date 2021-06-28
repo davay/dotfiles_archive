@@ -30,7 +30,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -108,3 +108,7 @@ alias vim="nvim"
 alias sudo="sudo " # enable aliases for sudo
 alias serve="browser-sync start --server --files ."
 alias vimconfig="nvim ~/.config/nvim/init.vim"
+alias zshconfig="nvim ~/.zshrc"
+alias skhdconfig="nvim ~/.config/skhd/skhdrc"
+alias yabaiconfig="nvim ~/.config/yabai/yabairc"
+

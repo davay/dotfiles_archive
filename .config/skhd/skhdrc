@@ -45,7 +45,7 @@ shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 #                yabai -m space --focus "${index}"
 
 # destroy desktop
-# cmd + alt - w : yabai -m space --destroy
+cmd + alt - w : yabai -m space --destroy
 
 # fast focus desktop
 cmd + alt - x : yabai -m space --focus recent
